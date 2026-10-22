@@ -231,7 +231,7 @@ Antes de gravar vários nós, ajuste o [`node_build.h`](node_build.h): nome, Wi-
 ## 🚀 Primeiro uso
 
 1. **Grave o firmware** e abra o Serial Monitor (9600 baud). O nó já começa a transmitir com os valores de fábrica.
-2. **Conecte no Wi-Fi do nó:** rede **`lorawan-node-abp`**, senha **`lorawan123`**. Em celulares a página abre sozinha (portal cativo); senão, acesse **http://192.168.4.1/**.
+2. **Conecte no Wi-Fi do nó:** rede **`lorawan-node-abp`**, senha **`lorawan123`**. Em celulares a página abre sozinha (portal cativo); senão, acesse **http://192.168.101.101/**.
 3. **Entre** com **`admin` / `lorawan`**.
 4. Em **Rede Wi-Fi**, informe sua rede; em **Ativação ABP**, DevAddr, NwkSKey, AppSKey e NetID do ChirpStack; ajuste rádio e uplink se precisar. **Salvar**.
 5. **Reinicie** pela barra inferior (o Wi-Fi novo vale depois do reinício). A página passa a responder em **http://lorawan-node-abp.local/** ou no IP que o Serial Monitor mostrar.
@@ -334,7 +334,7 @@ O **nome do nó** vira o hostname (`http://<nome>.local/`) e o nome padrão do S
 | Modo | Comportamento |
 |---|---|
 | **Station** | Conecta na rede; sem conexão em *Espera pelo Wi-Fi* segundos, abre o Soft AP de emergência |
-| **Soft AP** | Cria a própria rede; página em `192.168.4.1` |
+| **Soft AP** | Cria a própria rede; página em `192.168.101.101` |
 | **Desligado** | Sem Wi-Fi (menos consumo). O botão BOOT (3 s) ou `wifi_ap` abrem o Soft AP quando precisar |
 
 ### 8. Hardware
