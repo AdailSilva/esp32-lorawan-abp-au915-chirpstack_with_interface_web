@@ -719,7 +719,7 @@ ABP session provisioned:
   Channels: 9 enabled (sub-band from config)
 Packet queued.
 [WEB] Conectando na rede "MinhaRede-2G"...
-[WEB] Wi-Fi conectado: http://192.168.1.60/  ou  http://lorawan-node-abp.local/  (RSSI -58 dBm)
+[WEB] Wi-Fi conectado: http://192.168.18.101/  ou  http://lorawan-node-abp.local/  (RSSI -58 dBm)
 
 EV_TXSTART
 LMiC NwkSKey: 151F7779D7AAEE422A74568380DB7045
