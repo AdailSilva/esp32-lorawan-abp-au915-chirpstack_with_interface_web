@@ -83,7 +83,7 @@ Na **versão 1.1**, tudo o que antes era editado no código-fonte (DevAddr, NwkS
 |---|---|
 | Status ao vivo (5 s) | Uptime, memória, RSSI do Wi-Fi, sessão, FCnt, uplinks/ACKs, último downlink, próximo envio |
 | Ações | **Enviar agora**, **Reprovisionar sessão**, **Alterar FCnt…** |
-| Login | HTTP Basic (padrão `admin` / `lorawan`), botão **Sair** |
+| Login | HTTP Basic (padrão `admin` / `lorawan101`), botão **Sair** |
 | Logs | Tudo o que sai no Serial Monitor, ao vivo, com filtro, pausa e download (buffer de 16 KB em RAM) |
 | Manutenção | Exportar/importar a configuração em JSON (sem senhas) e restaurar padrão de fábrica |
 | Validação | No navegador e de novo no ESP32: chaves com tamanho exato, IPs, pinos repetidos ou só-entrada, canais, faixas numéricas |
@@ -231,8 +231,8 @@ Antes de gravar vários nós, ajuste o [`node_build.h`](node_build.h): nome, Wi-
 ## 🚀 Primeiro uso
 
 1. **Grave o firmware** e abra o Serial Monitor (9600 baud). O nó já começa a transmitir com os valores de fábrica.
-2. **Conecte no Wi-Fi do nó:** rede **`lorawan-node-abp`**, senha **`lorawan123`**. Em celulares a página abre sozinha (portal cativo); senão, acesse **http://192.168.101.101/**.
-3. **Entre** com **`admin` / `lorawan`**.
+2. **Conecte no Wi-Fi do nó:** rede **`lorawan-node-abp`**, senha **`lorawan101`**. Em celulares a página abre sozinha (portal cativo); senão, acesse **http://192.168.101.101/**.
+3. **Entre** com **`admin` / `lorawan101`**.
 4. Em **Rede Wi-Fi**, informe sua rede; em **Ativação ABP**, DevAddr, NwkSKey, AppSKey e NetID do ChirpStack; ajuste rádio e uplink se precisar. **Salvar**.
 5. **Reinicie** pela barra inferior (o Wi-Fi novo vale depois do reinício). A página passa a responder em **http://lorawan-node-abp.local/** ou no IP que o Serial Monitor mostrar.
 6. Troque a senha da página em **Acesso**.
@@ -257,7 +257,7 @@ Servidor HTTP na porta **80**, páginas na flash do firmware (sem internet nem C
 
 | Item | Detalhe |
 |---|---|
-| Login padrão | `admin` / `lorawan` |
+| Login padrão | `admin` / `lorawan101` |
 | Trocar | Seção **Acesso**. Vale na hora; o navegador pede o novo login |
 | Esqueceu | No Serial Monitor: `web_auth --reset` |
 | Regras | Usuário de 1 a 31 caracteres; senha de 6 a 31; sem `:` |
@@ -445,13 +445,13 @@ Valores de fábrica do [`node_build.h`](node_build.h). **Na hora** = sem reinici
 | Wi-Fi | Nome do nó | `lorawan-node-abp` | reinício |
 | Wi-Fi | SSID / senha / IP | vazio / vazio / DHCP | reinício |
 | Inicialização | Modo | Station (com Soft AP de emergência) | reinício |
-| Inicialização | Soft AP: nome / senha / canal | nome do nó / `lorawan123` / 6 | reinício |
+| Inicialização | Soft AP: nome / senha / canal | nome do nó / `lorawan101` / 6 | reinício |
 | Inicialização | Espera pelo Wi-Fi / botão | 30 s / GPIO 0 | reinício |
 | Hardware | SCLK, MISO, MOSI, NSS | 18, 19, 23, 5 | reinício |
 | Hardware | RESET, DIO0, DIO1, DIO2 | 14, 34, 35, -1 | reinício |
 | Hardware | Clock SPI / serial | 0 (padrão LMiC) / 9600 | reinício |
 | Hardware | Diagnóstico de sessão | ligado | na hora |
-| Acesso | Usuário / senha | `admin` / `lorawan` | na hora |
+| Acesso | Usuário / senha | `admin` / `lorawan101` | na hora |
 
 A configuração fica na NVS em `nodecfg/cfg` (um blob versionado: firmwares futuros podem acrescentar campos sem perder os antigos). O FCnt fica separado em `lmic/seqnoUp`, o mesmo lugar da versão 1.0.
 
@@ -466,7 +466,7 @@ Serial Monitor com final de linha **Newline**.
 | `help` | Lista os comandos |
 | `status` | DevAddr, FCnt, uplinks, downlinks, heap e endereço da página |
 | `wifi_ap` | Abre o Soft AP de configuração agora |
-| `web_auth --reset` | Login da página volta para `admin` / `lorawan` (vale na hora) |
+| `web_auth --reset` | Login da página volta para `admin` / `lorawan101` (vale na hora) |
 | `send` | Envia um uplink agora |
 | `fcnt <n>` | Define o próximo FCnt de uplink e grava na NVS |
 | `cfg_reset` | Apaga a configuração e reinicia com o padrão de fábrica |

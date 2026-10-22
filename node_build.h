@@ -34,7 +34,7 @@
 #define DEF_WIFI_MODE           0
 #define DEF_WIFI_SSID           ""
 #define DEF_WIFI_PASS           ""
-#define DEF_AP_PASS             "lorawan123"     /* min. 8 characters  */
+#define DEF_AP_PASS             "lorawan101"     /* min. 8 characters  */
 #define DEF_AP_CHANNEL          6
 /* Soft AP addressing (fixed at build time). DHCP leases start at IP+1. */
 #define DEF_AP_IP               192, 168, 101, 101
@@ -46,7 +46,7 @@
 
 /* ------------------------- Web page login -------------------------- */
 #define DEF_WEB_USER            "admin"
-#define DEF_WEB_PASS            "lorawan"
+#define DEF_WEB_PASS            "lorawan101"
 
 /* ---------------------- ABP credentials (MSB) ---------------------- */
 /* ChirpStack -> Devices -> device -> Activation (ABP)                 */
